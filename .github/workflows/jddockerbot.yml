@@ -22,7 +22,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/lxrcbw/jddockerbot.git"
-          source_branch: "master"
+          source_repo: "https://github.com/SuMaiKaDe/bot.git"
+          source_branch: "main"
           destination_branch: "jddockerbot"
           github_token: ${{ secrets.PAT }}
