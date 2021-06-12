@@ -1,12 +1,12 @@
-name: DD-D1-sync
+name: hundun-sync
 on:
   schedule:
-    - cron: '14 */3 * * *'
+    - cron: '1 */3 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
-    types: sync-DD-D1-2020scripts
+    types: sync-whyour-hundun
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync DD-D1-2020scripts
+      - name: sync whyour-hundun
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/DD-D1/2020scripts.git"
+          source_repo: "https://github.com/whyour/hundun.git"
           source_branch: "master"
-          destination_branch: "DD-D1"
+          destination_branch: "hundun"
           github_token: ${{ secrets.PAT }}

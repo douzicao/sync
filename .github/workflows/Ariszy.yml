@@ -1,4 +1,4 @@
-name: whyour-sync
+name: Ariszy-sync
 on:
   schedule:
     - cron: '1 */3 * * *'
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-whyour-hundun
+    types: sync-Ariszy
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync whyour-hundun
+      - name: sync Ariszy
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/whyour/hundun.git"
+          source_repo: "	https://github.com/Ariszy/Private-Script.git"
           source_branch: "master"
-          destination_branch: "hundun"
+          destination_branch: "Ariszy"
           github_token: ${{ secrets.PAT }}

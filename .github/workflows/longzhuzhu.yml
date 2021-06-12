@@ -1,4 +1,4 @@
-name: lowking-sync
+name: longzhuzhu-sync
 on:
   schedule:
     - cron: '1 */3 * * *'
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-lowking-Scripts
+    types: sync-longzhu-JavaScript
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync lowking-Scripts
+      - name: sync longzhuzhu-JavaScript
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/lowking/Scripts.git"
-          source_branch: "master"
-          destination_branch: "lowking"
+          source_repo: "https://github.com/longzhuzhu/nianyu.git"
+          source_branch: "main"
+          destination_branch: "longzhuzhu"
           github_token: ${{ secrets.PAT }}
