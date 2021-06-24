@@ -26,4 +26,3 @@ jobs:
           source_branch: "main"
           destination_branch: "star"
           github_token: ${{ secrets.PAT }}
-© 2021 GitHub, Inc.
