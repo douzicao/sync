@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-ZCY01
+    types: sync-ZCY01-JavaScript
 jobs:
   repo-sync:
     env:
@@ -18,7 +18,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync ZCY01-daily_scripts
+      - name: sync ZCY01-daily_scripts-JavaScript
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
