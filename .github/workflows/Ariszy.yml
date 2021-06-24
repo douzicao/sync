@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-Ariszy
+    types: sync-Ariszy-JavaScript
 jobs:
   repo-sync:
     env:
@@ -18,7 +18,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync Ariszy
+      - name: sync Ariszy-JavaScript
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
