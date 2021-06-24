@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-Andy
+    types: sync-Andy-JavaScript
 jobs:
   repo-sync:
     env:
@@ -18,7 +18,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync Andy_scripts
+      - name: sync Andy_scripts-JavaScript
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
