@@ -1,4 +1,4 @@
-name: star-sync
+name: cdle-sync
 on:
   schedule:
     - cron: '1 */3 * * *'
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-star
+    types: sync-cdle
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync star
+      - name: sync cdle
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/star261/jd.git"
+          source_repo: "https://github.com/cdle/jd_study.git"
           source_branch: "main"
-          destination_branch: "star"
+          destination_branch: "cdle"
           github_token: ${{ secrets.PAT }}
