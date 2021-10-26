@@ -13,8 +13,8 @@ const $ = new Env('京东试用')
 const URL = 'https://api.m.jd.com/client.action'
 
 const thefs = require('fs');
-const thepath = '/jd/scripts/0sendNotify_Annyooo.js'
-const notifyTip = $.isNode() ? process.env.MY_NOTIFYTIP : false;
+const thepath = './sendNotify.js'
+const notifyTip = $.isNode() ? process.env.MY_NOTIFYTIP : true;
 
 let trialActivityIdList = []
 let trialActivityTitleList = []
