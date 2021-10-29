@@ -1,4 +1,4 @@
-name: smiek-sync
+name: s-sync
 on:
   schedule:
     - cron: '1 */1 * * *'
@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-smiek-JavaScript
+    types: sync-JavaScript
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync smiek-JavaScript
+      - name: sync JavaScript
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/smiek2221/scripts.git"
-          source_branch: "master"
-          destination_branch: "smiek"
+          source_repo: "https://github.com/star261/jd.git"
+          source_branch: "main"
+          destination_branch: "star"
           github_token: ${{ secrets.PAT }}
